@@ -398,13 +398,16 @@ The original `classifier.py` had 8 bugs — all fixed in this version:
 
 ## Author
 
-**Nataraj S B**  
-Career switcher from Garments Industry → ML / AI Engineer  
-📍 Tamil Nadu, India  
-🔗 GitHub: [github.com/connectnataraj-boop](https://github.com/connectnataraj-boop)  
-🔗 LinkedIn: [linkedin.com/in/nataraj-sb-b5a84a3b7](https://linkedin.com/in/nataraj-sb-b5a84a3b7)
+**S. Nataraj**
+AI Engineer | Deep Learning & Gen AI
+connectnataraj@outlook.com
+Tirupur, Tamil Nadu, India
+GitHub: https://github.com/your-username
+LinkedIn: https://linkedin.com/in/nataraj-sb-b5a84a3b7
+
 
 ---
 
 > Built as part of an active ML/GenAI portfolio.  
 > Other projects: RAG HR Chatbot · CNN Dog vs Cat Classifier · Twitter Sentiment Analysis (BERT)
+>> *"Built this project from scratch — including all the bugs — and learned more from fixing them than from any tutorial."*
