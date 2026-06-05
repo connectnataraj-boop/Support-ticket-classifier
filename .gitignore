@@ -1,0 +1,102 @@
+# =================================================
+# PYTHON
+# =================================================
+
+# Virtual environment folders
+venv/
+env/
+.env/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+
+# Python egg / build files
+*.egg-info/
+*.egg
+dist/
+build/
+
+# =================================================
+# API KEYS & SECRETS
+# =================================================
+
+# Environment variable files — NEVER commit these
+.env
+.env.local
+.env.production
+secrets.txt
+api_keys.txt
+config.py
+
+# =================================================
+# STREAMLIT
+# =================================================
+
+# Streamlit cache and secrets
+.streamlit/secrets.toml
+.streamlit/cache/
+
+# =================================================
+# EDITOR / IDE FILES
+# =================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# =================================================
+# OPERATING SYSTEM FILES
+# =================================================
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Mac
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+
+# Linux
+*~
+
+# =================================================
+# LOGS & TEMP FILES
+# =================================================
+
+*.log
+*.tmp
+*.temp
+logs/
+temp/
+
+# =================================================
+# DATA FILES (optional — remove if you want to track)
+# =================================================
+
+*.csv
+*.xlsx
+*.json
+*.db
+*.sqlite
+
+# =================================================
+# TESTING
+# =================================================
+
+.pytest_cache/
+.coverage
+htmlcov/
