@@ -131,11 +131,16 @@ def main():
     st.sidebar.title("Settings")
 
     # API key — type
+    try:
+    value = st.secrets.get("OPENAI_API_KEY", "")
+    except Exception:
+    value = ""
+
     api_key = st.sidebar.text_input(
         label="OpenAI API Key",
         type="password",
         placeholder="sk-...",
-        value=st.secrets.get("OPENAI_API_KEY", "")
+        value=value
     )
 
     # Model selector dropdown
