@@ -1,9 +1,3 @@
-"""
-app.py — Streamlit UI for Support Ticket Classifier
-=====================================================
-Run with:  streamlit run app.py
-"""
-
 import streamlit as st
 from classifier import SupportTicketClassifier
 
@@ -154,10 +148,11 @@ def main():
     st.sidebar.write("Enter your OpenAI API key to use the classifier.")
 
     api_key = st.sidebar.text_input(
-        label="OpenAI API Key",
-        type="password",          # hides the key with dots
-        placeholder="sk-..."
-    )
+    label="OpenAI API Key",
+    type="password",
+    placeholder="sk-...",
+    value=st.secrets.get("OPENAI_API_KEY", "")  
+)
 
     model = st.sidebar.selectbox(
         label="Model",
