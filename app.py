@@ -132,9 +132,9 @@ def main():
 
     # API key — type
     try:
-    value = st.secrets.get("OPENAI_API_KEY", "")
+        value = st.secrets.get("OPENAI_API_KEY", "")
     except Exception:
-    value = ""
+        value = ""
 
     api_key = st.sidebar.text_input(
         label="OpenAI API Key",
