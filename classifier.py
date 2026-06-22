@@ -29,7 +29,7 @@ class Ticketresults:
 class PIIRedactor:
 
     PATTERNS = {
-        "EMAIL": r'\b[A-Za-Z0-9.%-_+]+@[A-Za-z0-9.-]+\.[A-za-z]{2,}\b',
+        "EMAIL": r'\b[A-Za-z0-9.%-_+]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b',
         "PHONE": r'\b(\+?\d[\d\s\-().]{7,}\d)\b',
         "CREDIT_CARD": r'\b(?:\d[ -]?){13,16}\b',
         "ORDER_ID": r'\b(?:Order|order|ORDER|#)\s#?\d{4,10}\b',
