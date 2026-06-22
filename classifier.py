@@ -17,9 +17,21 @@ from langchain_core.output_parsers import StrOutputParser
 class Ticketresults:
     original_text: str
     redacted_text: str
-    pii_found: list[str]
-    injection_found: bool
+    pii_found: list
+    injection_detected: bool
     injection_reason: str
+    category: str
+    priority: str
+    sentiment: str
+    summary: str
+    suggested_action: str
+    confidence: float
+    input_tokens: int
+    output_tokens: int
+    estimated_cost_usd: float
+    fallback_used: bool = False
+    error: Optional[str] = None
+
 
 # -------------------------------------------------
 # 2. PII REDACTION
