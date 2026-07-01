@@ -82,7 +82,6 @@ def show_result(result):
     st.write("**Suggested Action:**")
     st.write(result.suggested_action)
 
-    # Fallback warning — only shown if fallback was used
     if result.fallback_used:
         st.warning("Fallback was used — first attempt failed JSON validation.")
 
@@ -108,7 +107,6 @@ def show_result(result):
     if result.pii_found:
         st.write("**PII Found:** " + ", ".join(result.pii_found))
 
-        # Expander = collapsible section, hidden by default
         with st.expander("Show Redacted Text"):
             st.code(result.redacted_text)
     else:
@@ -121,6 +119,13 @@ def show_result(result):
 
 def main():
 
+    # Read API key from secrets 
+    try:
+        api_key = st.secrets["OPENAI_API_KEY"]
+    except Exception:
+        st.error("API key not configured. Please contact the app owner.")
+        return
+
     # Page title ---------------------------
     st.title("Support Ticket Classifier")
     st.write(
@@ -129,19 +134,6 @@ def main():
 
     # Sidebar -------------------------------
     st.sidebar.title("Settings")
-
-    # API key — type
-    try:
-        value = st.secrets.get("OPENAI_API_KEY", "")
-    except Exception:
-        value = ""
-
-    api_key = st.sidebar.text_input(
-        label="OpenAI API Key",
-        type="password",
-        placeholder="sk-...",
-        value=value
-    )
 
     # Model selector dropdown
     model = st.sidebar.selectbox(
@@ -170,7 +162,6 @@ def main():
     # Ticket input ---------------------------
     st.write("### Your Ticket")
 
-    # Pre-fills the text box when user picks a sample
     ticket_text = st.text_area(
         label="Type or paste your support ticket:",
         value=SAMPLE_TICKETS[selected],
@@ -184,17 +175,11 @@ def main():
     # On button click -------------------------
     if clicked:
 
-        # Check 1: ticket must not be empty
         if not ticket_text.strip():
             st.warning("Please enter a ticket first.")
             return
 
-        # Check 2: API key must be entered
-        if not api_key:
-            st.error("Please enter your OpenAI API key in the sidebar.")
-            return
 
-        # st.spinner shows a loading message while the code inside runs
         with st.spinner("Running pipeline... please wait"):
 
             try:
@@ -213,7 +198,6 @@ def main():
                 show_result(result)
 
             except Exception as e:
-                # If anything crashes, show the error message
                 st.error("Error: " + str(e))
 
 
